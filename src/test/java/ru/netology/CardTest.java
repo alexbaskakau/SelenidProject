@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
@@ -25,7 +26,7 @@ public class CardTest {
 
     @BeforeAll
     static void setUpAll() {
-         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        // System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         // ChromeOptions options = new ChromeOptions();
         // options.addArguments("--disable-dev-shm-usage");
         // options.addArguments("--no-sandbox");
@@ -62,6 +63,7 @@ public class CardTest {
         $("[name='phone'").setValue("+73456789997");
         $("[data-test-id=agreement").click();
         $(By.className("button")).click();
-        $(withText("Успешно!")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+
     }
     }
