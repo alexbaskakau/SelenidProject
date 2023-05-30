@@ -1,5 +1,7 @@
 package ru.netology;
+
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -53,9 +55,10 @@ public class CardTest {
 
     @Test
     void shouldTestSomething() {
+
         open("http://localhost:9999/");
         $("[data-test-id=city] input").setValue("Казань");
-       // $("[data-test-id=date] input").click();
+        // $("[data-test-id=date] input").click();
         $("[data-test-id=date] input").doubleClick();
         $("[data-test-id=date] input").sendKeys(Keys.BACK_SPACE);
         $("[data-test-id=date] input").setValue("15.11.2023");
@@ -66,4 +69,4 @@ public class CardTest {
         $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
 
     }
-    }
+}
