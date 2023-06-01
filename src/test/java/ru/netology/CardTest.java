@@ -45,7 +45,7 @@ public class CardTest {
         String meetDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id=date] input").setValue(meetDate);
         $("[data-test-id=name] input").setValue("Джонни Уокер");
-        $("[name='phone'").setValue("+73409514670");
+        $("[name='phone'").setValue("+73409514513");
         $("[data-test-id=agreement").click();
         $(By.className("button")).click();
         $(withText("Встреча")).shouldHave(Condition.text("Встреча успешно забронирована на " + meetDate),Duration.ofSeconds(15)).shouldBe(visible);
