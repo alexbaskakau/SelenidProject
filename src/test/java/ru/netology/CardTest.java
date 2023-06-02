@@ -37,7 +37,7 @@ public class CardTest {
     @Test
     void shouldTestSomething() {
 
-        open("http://localhost:9999/");
+        open("http://localhost:7777/");
         $("[data-test-id=city] input").setValue("Рязань");
         // $("[data-test-id=date] input").click();
         $("[data-test-id=date] input").doubleClick();
@@ -45,10 +45,10 @@ public class CardTest {
         String meetDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id=date] input").setValue(meetDate);
         $("[data-test-id=name] input").setValue("Джонни Уокер");
-        $("[name='phone'").setValue("+73409514531");
+        $("[name='phone'").setValue("+73409514536");
         $("[data-test-id=agreement").click();
         $(By.className("button")).click();
-        $(withText("Встреча")).shouldHave(Condition.text("Встреча успешно запланирована на " + meetDate),Duration.ofSeconds(15)).shouldBe(visible);
+        $(withText("Встреча")).shouldHave(Condition.text("Встреча успешно забронирована на " + meetDate),Duration.ofSeconds(15)).shouldBe(visible);
 
     }
 }
