@@ -30,12 +30,7 @@ import static com.codeborne.selenide.files.DownloadActions.click;
 public class CardTest {
     @BeforeAll
     static void setUpAll() {
-        // System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-        // ChromeOptions options = new ChromeOptions();
-        // options.addArguments("--disable-dev-shm-usage");
-        // options.addArguments("--no-sandbox");
-        // options.addArguments("--headless");
-        // driver = new ChromeDriver(options);
+
         WebDriverManager.chromedriver().setup();
     }
 
