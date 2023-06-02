@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 //import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -27,6 +28,16 @@ import static com.codeborne.selenide.files.DownloadActions.click;
 
 
 public class CardTest {
+    @BeforeAll
+    static void setUpAll() {
+        // System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        // ChromeOptions options = new ChromeOptions();
+        // options.addArguments("--disable-dev-shm-usage");
+        // options.addArguments("--no-sandbox");
+        // options.addArguments("--headless");
+        // driver = new ChromeDriver(options);
+        WebDriverManager.chromedriver().setup();
+    }
 
 
     public String generateDate(int daysToAdd, String pattern) {
