@@ -20,8 +20,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selectors.withText;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.files.DownloadActions.click;
@@ -51,10 +50,10 @@ public class CardTest {
         String meetDate = generateDate(4, "dd.MM.yyyy");
         $("[data-test-id=date] input").setValue(meetDate);
         $("[data-test-id=name] input").setValue("Джонни Уокер");
-        $("[name='phone'").setValue("+73409514575");
+        $("[name='phone']").setValue("+73409514575");
         $("[data-test-id=agreement").click();
-        $(By.className("button")).click();
-        $(withText("Встреча")).shouldHave(Condition.text("Встреча успешно забронирована на " + meetDate),Duration.ofSeconds(15)).shouldBe(visible);
+        $(byClassName("button")).click();
+        $("[data-test-id=notification").shouldHave(Condition.text("Встреча успешно забронирована на " + meetDate),Duration.ofSeconds(15)).shouldBe(visible);
 
     }
 }
