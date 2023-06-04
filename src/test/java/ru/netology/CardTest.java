@@ -27,11 +27,7 @@ import static com.codeborne.selenide.files.DownloadActions.click;
 
 
 public class CardTest {
-    @BeforeAll
-    static void setUpAll() {
 
-        WebDriverManager.chromedriver().setup();
-    }
 
 
     public String generateDate(int daysToAdd, String pattern) {
